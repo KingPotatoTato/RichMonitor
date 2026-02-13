@@ -11,6 +11,9 @@ A real-time system monitoring dashboard that displays PC metrics on a Raspberry 
 - Colorful terminal UI with progress bars and tables
 - Auto-refresh display
 - Startup/shutdown animations
+![Screenshot of terminal showing RickMonitor.](screenshot.png)
+> [!NOTE]
+> Real world view might look different depending on what terminal you are using.
 
 ## Architecture
 
