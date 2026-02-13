@@ -52,7 +52,8 @@ Install required packages:
 pip install flask psutil gputil
 ```
 
-**NOTE:** The GPUtil package is only required if you have an NVIDIA GPU. If you don't have a GPU or encounter issues, you can modify server.py to skip GPU monitoring.
+> [!NOTE]
+> The GPUtil package is only required if you have an NVIDIA GPU. If you don't have a GPU or encounter issues, you can modify server.py to skip GPU monitoring.
 
 #### 1.2 Configure the Server
 
@@ -101,7 +102,8 @@ ipconfig
 
 Look for your local IP address (usually starts with `192.168.x.x` or `10.x.x.x`).
 
-**NOTE:** Make sure both your PC and Raspberry Pi are on the same network.
+> [!NOTE]
+> Make sure both your PC and Raspberry Pi are on the same network.
 
 #### 1.5 Configure Firewall
 
@@ -151,7 +153,8 @@ RestartSec=10
 WantedBy=multi-user.target
 ```
 
-**IMPORTANT:** Replace the following:
+> [!IMPORTANT]
+> Replace the following:
 - `YOUR_USERNAME` with your actual username
 - `/path/to/project` with the actual path to your project directory
 
@@ -229,7 +232,8 @@ source venv/bin/activate
 pip install requests pyfiglet psutil rich
 ```
 
-**NOTE:** The installation may take several minutes on Raspberry Pi due to limited processing power.
+> [!NOTE]
+> The installation may take several minutes on Raspberry Pi due to limited processing power.
 
 #### 2.5 Configure main.py
 
@@ -248,7 +252,8 @@ LOC = "Your City or Zipcode"          # Your location
 3. Copy your API key from the dashboard
 4. Paste it into `main.py`
 
-**TIP:** The free tier allows 1,000,000 API calls per month, which is more than sufficient for this application.
+> [!TIP]
+> The free tier allows 1,000,000 API calls per month, which is more than sufficient for this application so you can use it for other projects too.
 
 #### 2.6 Adjust Terminal Size
 
@@ -269,7 +274,8 @@ Reboot to apply changes.
 **For GUI terminal:**
 Resize your terminal window and adjust the font size to achieve approximately 210 columns and 65 rows.
 
-**TIP:** You can modify the `columns` and `lines` variables in `main.py` to match your display capabilities.
+> [!TIP]
+> You can modify the `columns` and `lines` variables in `main.py` to match your display capabilities.
 
 #### 2.7 Test the Dashboard
 
@@ -314,7 +320,8 @@ def hdmiPower(state: bool):
     subprocess.run(cmd, shell=True, check=True)
 ```
 
-**IMPORTANT:** To use `hdmiPower()` without entering a password, add sudo permissions:
+> [!IMPORTANT]
+> To use `hdmiPower()` without entering a password, add sudo permissions:
 
 ```bash
 sudo visudo
@@ -350,7 +357,8 @@ if [ -z "$SSH_CLIENT" ] && [ -z "$SSH_TTY" ]; then
 fi
 ```
 
-**NOTE:** This only runs on TTY1 (the primary console). It won't run over SSH.
+> [!NOTE]
+> This only runs on TTY1 (the primary console). It won't run over SSH.
 
 **Method 2: Using systemd with getty (recommended)**
 
@@ -393,7 +401,8 @@ Enable the service:
 sudo systemctl enable getty@tty1.service
 ```
 
-**CAUTION:** Auto-login on TTY1 means anyone with physical access can use your system. Only use this on secured devices.
+> [!CAUTION]
+> Auto-login on TTY1 means anyone with physical access can use your system. Only use this on secured devices.
 
 **Method 3: Using rc.local (legacy method)**
 
@@ -415,7 +424,8 @@ Make rc.local executable:
 sudo chmod +x /etc/rc.local
 ```
 
-**WARNING:** This method runs the script as a background process. For true CLI display, Methods 1 or 2 are preferred.
+> [!WARNING]
+> This method runs the script as a background process. For true CLI display, Methods 1 or 2 are preferred.
 
 #### 2.10 Verify Auto-Start
 
@@ -558,7 +568,8 @@ systems = ["systemd", "sshd", "cron", "python3", "NetworkManager", "dnsmasq"]
 
 ## Security Considerations
 
-**WARNING:** This system is designed for trusted local networks only.
+> [!WARNING]
+> This system is designed for trusted local networks only.
 
 Security recommendations:
 
@@ -660,4 +671,5 @@ For issues or questions:
 3. Check system logs for detailed error messages
 4. Ensure all dependencies are correctly installed
 
-**TIP:** When debugging, run both `server.py` and `main.py` manually in separate terminals to see real-time error messages.
+> [!TIP]
+> When debugging, run both `server.py` and `main.py` manually in separate terminals to see real-time error messages.
