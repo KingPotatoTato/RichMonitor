@@ -662,7 +662,8 @@ Weather data provided by [WeatherAPI.com](https://www.weatherapi.com/)
 
 ## License
 
-This project is provided as-is for personal and educational use.
+Under CC0-1.0 license.
+This project is provided as-is.
 
 ---
 
