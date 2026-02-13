@@ -1,4 +1,4 @@
-# System Monitor Dashboard
+# RichMonitor (A System Monitor Dashboard)
 
 A real-time system monitoring dashboard that displays PC metrics on a Raspberry Pi or similar single-board computer. The system consists of two components: a Flask server running on your PC that collects system metrics, and a Rich-based terminal dashboard running on a Raspberry Pi that displays the information.
 
